@@ -1,17 +1,11 @@
-import axios from "axios";
+import Userservices from "../Services/Userservices";
 import { useState,useEffect } from "react";
 const Listec2 = ()=>{
 
 
     const [listec2,setlistec2] = useState([]);
-    const baseURL = "http://54.147.135.214:5000";
-    
-    
-          
-
-    
     useEffect(()=>{
-        axios.get(`${baseURL}/listec2`).then((response)=>{
+        Userservices.get_request('/listec2').then((response)=>{
         setlistec2(response.data)
         console.log(response.data)
         console.log(typeof(listec2))

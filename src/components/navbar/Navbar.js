@@ -27,9 +27,6 @@ const Navbar = ()=>{
                   <li className="nav-item">
                     <Link className="nav-link" to='/listdynamodb'>List DynamoDb</Link>
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to='/createdynamodb'>Create DynamoDb</Link>
-                  </li>
 
                   <li className="nav-item">
                     <Link className="nav-link" to='/deletedynamodb'>delete DynamoDb</Link>

@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Userservices from "../Services/Userservices";
-const Deletedynamo = ()=>{
+
+const Deleteec2 = ()=>{
     const navigate = useNavigate();
     const [bucketName,setbucketName] = useState('');
-    
+   
     const submitHandler = ()=> {
-        console.log(bucketName)
-        Userservices.delete_request('deletedynamodbtable',bucketName).then((response)=>{
+        
+        Userservices.delete_request('/deletedynamodbtable',bucketName).then((response)=>{
             console.log(response.data);
             navigate('/listdynamodb')
         })
@@ -21,7 +22,7 @@ const Deletedynamo = ()=>{
 
         <form onSubmit={submitHandler}>
         <div className="form-group">
-            <label htmlFor="bucketName">Table Name</label>
+            <label htmlFor="bucketName">Bucket Name</label>
             <input className="form-control" type="text" id="bucketName" name="bucketName" onChange={nameChangeHandler}/>
         </div>
     <br/>
@@ -34,4 +35,4 @@ const Deletedynamo = ()=>{
     );
 }
 
-export default Deletedynamo;
+export default Deleteec2;

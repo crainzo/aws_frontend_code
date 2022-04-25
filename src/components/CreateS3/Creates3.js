@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import Userservices from "../Services/Userservices";
+
 const Creates3 = ()=>{
      const [bucketName,setbucketName] = useState('');
      const navigate = useNavigate();
@@ -15,9 +16,8 @@ const Creates3 = ()=>{
             "bucketName":event.target.elements.bucketName.value,
             "bucketLocation":event.target.elements.location.value
         }
-        const baseURL = "http://127.0.0.1:5000";
-        axios.post(`${baseURL}/creates3`,data).then((response)=>{
-            console.log(response.data)
+        
+        Userservices.post_request('/creates3',data).then((response)=>{
             navigate('/lists3')
         })
 

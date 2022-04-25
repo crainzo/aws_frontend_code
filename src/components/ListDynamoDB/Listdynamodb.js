@@ -1,12 +1,12 @@
 import { useState,useEffect } from "react";
-import axios from "axios";
+import Userservices from "../Services/Userservices";
 const Listdynamodb = ()=>{
 
     const [listdynamo,setlistdynamo] = useState(['']);
-    const baseURL = "http://127.0.0.1:5000";
+   
     
     useEffect(()=>{
-        axios.get(`${baseURL}/listdynamodbtable`).then((response)=>{
+        Userservices.get_request('/listdynamodbtable').then((response)=>{
            // localStorage.setItem('lists3',response.data)
             setlistdynamo(response.data)
               
